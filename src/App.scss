@@ -1,0 +1,19 @@
+@import "index.scss";
+
+.App {
+	background-color: $ivory;
+}
+
+#App-title {
+	background-color: $cinnabar;
+	height: 50px;
+
+	h1 {
+		text-align: center;
+		color: $ivory;
+		margin: 0;
+		padding: 10px;
+		font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+			"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	}
+}
