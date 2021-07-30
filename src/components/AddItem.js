@@ -2,18 +2,29 @@ import React from "react";
 import "./AddItem.scss";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem } from "../todoSlice";
 
 const AddItem = () => {
+	const todoItem = useSelector((state) => state.todo.value);
+	const dispatch = useDispatch();
+
 	return (
 		<div>
 			<div id="add-item-area">
 				<input placeholder="Add item" id="add-item-input" />
-				<button id="plus">+</button>
+				<button
+					id="plus"
+					aria-label="Add Item"
+					onClick={() => dispatch(addItem("Hello"))}
+				>
+					+
+				</button>
 			</div>
 			<div id="items">
 				<ul id="items-list">
 					<div className="item">
-						<li className="item-name">Item 1</li>
+						<li className="item-name">{todoItem}</li>
 						<div className="btn-grp">
 							<button className="edit">
 								<EditIcon />
