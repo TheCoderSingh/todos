@@ -12,17 +12,18 @@
 		height: 30px;
 		font-size: 1em;
 		padding-left: 10px;
-		border: 1px solid $onyx;
+		border: 1px solid #ddd;
 	}
 
 	#plus {
-		font-size: 1.7em;
-		background-color: $onyx;
-		color: $ivory;
+		font-size: 1.6em;
+		background-color: $greenBlue;
+		color: #fff;
 		width: 30px;
 		height: 34px;
 		margin-top: 30px;
-		border: 1px solid $onyx;
+		border: none;
+		border-radius: 0 4px 4px 0;
 	}
 }
 
@@ -34,16 +35,17 @@
 		width: 90%;
 
 		.item {
-			height: 60px;
-			background-color: $onyx;
+			height: 50px;
+			background-color: #ccc;
 			margin-top: 10px;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 			padding-left: 20px;
+			border-radius: 4px;
 
 			.item-name {
-				color: $ivory;
+				color: #111;
 				font-family: "Lucida Sans", "Lucida Sans Regular",
 					"Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
 					sans-serif;
@@ -52,32 +54,40 @@
 			.btn-grp {
 				height: 100%;
 
-				.edit {
-					background-color: $keppel;
-				}
-
 				.delete {
-					background-color: $greenBlue;
+					border-radius: 0 4px 4px 0;
 				}
 
 				button {
 					height: 100%;
 					width: 40px;
 					border: none;
+					outline: none;
+					background-color: $cinnabar;
+					color: #fff;
 				}
 			}
 		}
 	}
 }
 
-#delete-btn {
+#bottom-area {
 	text-align: center;
-	margin-top: 30px;
+	margin: 30px auto 0 auto;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	span {
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	}
 
 	button {
-		background-color: $cinnabar;
+		background-color: $greenBlue;
 		border: none;
 		padding: 10px 15px;
-		color: $ivory;
+		color: #fff;
+		border-radius: 4px;
 	}
 }

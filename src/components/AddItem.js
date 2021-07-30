@@ -1,5 +1,7 @@
 import React from "react";
 import "./AddItem.scss";
+import EditIcon from "@material-ui/icons/Edit";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 const AddItem = () => {
 	return (
@@ -13,49 +15,74 @@ const AddItem = () => {
 					<div className="item">
 						<li className="item-name">Item 1</li>
 						<div className="btn-grp">
-							<button className="edit">E</button>
-							<button className="delete">D</button>
+							<button className="edit">
+								<EditIcon />
+							</button>
+							<button className="delete">
+								<DeleteForeverIcon />
+							</button>
 						</div>
 					</div>
 					<div className="item">
 						<li className="item-name">Item 2</li>
 						<div className="btn-grp">
-							<button className="edit">E</button>
-							<button className="delete">D</button>
+							<button className="edit">
+								<EditIcon />
+							</button>
+							<button className="delete">
+								<DeleteForeverIcon />
+							</button>
 						</div>
 					</div>
 					<div className="item">
 						<li className="item-name">Item 3</li>
 						<div className="btn-grp">
-							<button className="edit">E</button>
-							<button className="delete">D</button>
+							<button className="edit">
+								<EditIcon />
+							</button>
+							<button className="delete">
+								<DeleteForeverIcon />
+							</button>
 						</div>
 					</div>
 					<div className="item">
 						<li className="item-name">Item 4</li>
 						<div className="btn-grp">
-							<button className="edit">E</button>
-							<button className="delete">D</button>
+							<button className="edit">
+								<EditIcon />
+							</button>
+							<button className="delete">
+								<DeleteForeverIcon />
+							</button>
 						</div>
 					</div>
 					<div className="item">
 						<li className="item-name">Item 5</li>
 						<div className="btn-grp">
-							<button className="edit">E</button>
-							<button className="delete">D</button>
+							<button className="edit">
+								<EditIcon />
+							</button>
+							<button className="delete">
+								<DeleteForeverIcon />
+							</button>
 						</div>
 					</div>
 					<div className="item">
 						<li className="item-name">Item 6</li>
 						<div className="btn-grp">
-							<button className="edit">E</button>
-							<button className="delete">D</button>
+							<button className="edit">
+								<EditIcon />
+							</button>
+							<button className="delete">
+								<DeleteForeverIcon />
+							</button>
 						</div>
 					</div>
 				</ul>
 			</div>
-			<div id="delete-btn">
-				<button>Delete All Items</button>
+			<div id="bottom-area">
+				<span>You have 6 pending tasks.</span>
+				<button>Delete All</button>
 			</div>
 		</div>
 	);

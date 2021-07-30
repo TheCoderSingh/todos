@@ -1,17 +1,17 @@
 @import "index.scss";
 
 .App {
-	background-color: $ivory;
+	background-color: #fff;
 	min-height: 100vh;
 }
 
 #App-title {
-	background-color: $cinnabar;
+	background-color: $greenBlue;
 	height: 50px;
 
 	h1 {
 		text-align: center;
-		color: $ivory;
+		color: #fff;
 		margin: 0;
 		padding: 10px;
 		font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
