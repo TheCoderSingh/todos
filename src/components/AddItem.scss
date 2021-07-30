@@ -1,0 +1,83 @@
+@import "../index.scss";
+
+#add-item-area {
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	#add-item-input {
+		margin-top: 30px;
+		height: 30px;
+		font-size: 1em;
+		padding-left: 10px;
+		border: 1px solid $onyx;
+	}
+
+	#plus {
+		font-size: 1.7em;
+		background-color: $onyx;
+		color: $ivory;
+		width: 30px;
+		height: 34px;
+		margin-top: 30px;
+		border: 1px solid $onyx;
+	}
+}
+
+#items {
+	#items-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 40px auto;
+		width: 90%;
+
+		.item {
+			height: 60px;
+			background-color: $onyx;
+			margin-top: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-left: 20px;
+
+			.item-name {
+				color: $ivory;
+				font-family: "Lucida Sans", "Lucida Sans Regular",
+					"Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+					sans-serif;
+			}
+
+			.btn-grp {
+				height: 100%;
+
+				.edit {
+					background-color: $keppel;
+				}
+
+				.delete {
+					background-color: $greenBlue;
+				}
+
+				button {
+					height: 100%;
+					width: 40px;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+#delete-btn {
+	text-align: center;
+	margin-top: 30px;
+
+	button {
+		background-color: $cinnabar;
+		border: none;
+		padding: 10px 15px;
+		color: $ivory;
+	}
+}
