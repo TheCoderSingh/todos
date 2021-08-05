@@ -32,6 +32,13 @@ const AddItem = () => {
 		));
 	};
 
+	const handleKeypress = (e) => {
+		if (e.keyCode === 13) {
+			dispatch(addItem(todoName));
+			setTodoCount(todoCount + 1);
+		}
+	};
+
 	return (
 		<div>
 			<div id="add-item-area">
@@ -39,13 +46,15 @@ const AddItem = () => {
 					placeholder="Add item"
 					id="add-item-input"
 					onChange={handleChangeName}
+					onKeyDown={handleKeypress}
 				/>
 				<button
 					id="plus"
 					aria-label="Add Item"
-					onClick={() =>
-						dispatch(addItem(todoName), setTodoCount(todoCount + 1))
-					}
+					onClick={() => {
+						dispatch(addItem(todoName));
+						setTodoCount(todoCount + 1);
+					}}
 				>
 					+
 				</button>
