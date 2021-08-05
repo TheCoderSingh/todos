@@ -15,12 +15,15 @@ const AddItem = () => {
 
 	const [modalIsOpen, setIsOpen] = React.useState(false);
 
+	const [currentItem, setCurrentItem] = useState();
+
 	const handleChangeName = (e) => {
 		setTodoName(e.target.value);
 	};
 
-	const openModal = () => {
+	const openModal = (i) => {
 		setIsOpen(true);
+		setCurrentItem(i);
 	};
 
 	const afterOpenModal = () => {};
@@ -34,7 +37,7 @@ const AddItem = () => {
 			<div className="item" key={i}>
 				<li className="item-name">{item}</li>
 				<div className="btn-grp">
-					<button className="edit" onClick={openModal}>
+					<button className="edit" onClick={() => openModal(i)}>
 						<EditIcon />
 					</button>
 					<button className="delete">
@@ -85,7 +88,7 @@ const AddItem = () => {
 				onRequestClose={closeModal}
 				contentLabel="Edit Todo Item"
 			>
-				<h1>Edit here...</h1>
+				<input value={todoItems[currentItem]} />
 			</ReactModal>
 			<div id="items">
 				<ul id="items-list">{renderTodos()}</ul>
