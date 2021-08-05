@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AddItem.scss";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../todoSlice";
+import ReactModal from "react-modal";
 
 const AddItem = () => {
 	const todoItems = useSelector((state) => state.todo.value);
@@ -12,8 +13,20 @@ const AddItem = () => {
 	const [todoName, setTodoName] = useState();
 	const [todoCount, setTodoCount] = useState(0);
 
+	const [modalIsOpen, setIsOpen] = React.useState(false);
+
 	const handleChangeName = (e) => {
 		setTodoName(e.target.value);
+	};
+
+	const openModal = () => {
+		setIsOpen(true);
+	};
+
+	const afterOpenModal = () => {};
+
+	const closeModal = () => {
+		setIsOpen(false);
 	};
 
 	const renderTodos = () => {
@@ -21,7 +34,7 @@ const AddItem = () => {
 			<div className="item" key={i}>
 				<li className="item-name">{item}</li>
 				<div className="btn-grp">
-					<button className="edit">
+					<button className="edit" onClick={openModal}>
 						<EditIcon />
 					</button>
 					<button className="delete">
@@ -43,8 +56,12 @@ const AddItem = () => {
 		}
 	};
 
+	useEffect(() => {
+		ReactModal.setAppElement("#main");
+	});
+
 	return (
-		<div>
+		<div id="main">
 			<div id="add-item-area">
 				<input
 					placeholder="Add item"
@@ -62,6 +79,14 @@ const AddItem = () => {
 					+
 				</button>
 			</div>
+			<ReactModal
+				isOpen={modalIsOpen}
+				onAfterOpen={afterOpenModal}
+				onRequestClose={closeModal}
+				contentLabel="Edit Todo Item"
+			>
+				<h1>Edit here...</h1>
+			</ReactModal>
 			<div id="items">
 				<ul id="items-list">{renderTodos()}</ul>
 			</div>
