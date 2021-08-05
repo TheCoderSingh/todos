@@ -33,7 +33,11 @@ const AddItem = () => {
 	};
 
 	const handleKeypress = (e) => {
-		if (e.keyCode === 13) {
+		if (e.keyCode === 13) addTodoItem();
+	};
+
+	const addTodoItem = () => {
+		if (todoName !== undefined) {
 			dispatch(addItem(todoName));
 			setTodoCount(todoCount + 1);
 		}
@@ -52,8 +56,7 @@ const AddItem = () => {
 					id="plus"
 					aria-label="Add Item"
 					onClick={() => {
-						dispatch(addItem(todoName));
-						setTodoCount(todoCount + 1);
+						addTodoItem();
 					}}
 				>
 					+
